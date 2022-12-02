@@ -37,10 +37,11 @@ app.use(
     secret: "cats",
     saveUninitialized: false,
     resave: false,
-  })
-);
+  })                                                    
+);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 passport.use(
-  new LocalStrategy((Email, password, done) => {
+  new LocalStrategy((Email, password, done) => {  
+    console.log("hi sehaj")
     User.findOne({ Email: Email }, (err, user) => {
       if (err) {
         return done(err);
@@ -68,7 +69,7 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-app.use(passport.initialize());
+app.use(passport.initialize());                                                                                                                                                                         
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(function (req, res, next) {
@@ -78,6 +79,7 @@ app.use(function (req, res, next) {
 });
 
 app.post("/catalog/login", passport.authenticate("local"), (req, res) => {
+  console.log("sehaj")
   res.redirect("/catalog");
 });
 

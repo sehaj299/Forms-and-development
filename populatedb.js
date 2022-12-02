@@ -84,7 +84,7 @@ function createUsers(cb) {
 function createPosts(cb) {
     async.parallel([
         function(callback) {
-          postCreate('Internet', users[0], 'Social media are interactive Web 2.0 Internet -based applications. ',"false", callback);
+          postCreate('Internet                                                                                                                                                                                                                                                    ', users[0], 'Social media are interactive Web 2.0 Internet -based applications. ',"false", callback);
         },
         function(callback) {
           postCreate("PYTHON", users[1], 'python is a scripting language',"false", callback);
